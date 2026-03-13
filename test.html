@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falcon SAQR</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+background:#0f2027;
+overflow:hidden;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* خلفية الشارت */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* الكارد */
+
+.container{
+text-align:center;
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+width:90%;
+max-width:420px;
+}
+
+/* اللوجو */
+
+.logo{
+width:120px;
+border-radius:50%;
+margin-bottom:15px;
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0px)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0px)}
+}
+
+h1{
+margin-bottom:5px;
+}
+
+p{
+opacity:0.8;
+margin-bottom:20px;
+}
+
+/* السوشيال */
+
+.social{
+margin-bottom:25px;
+}
+
+.social a{
+margin:0 10px;
+color:white;
+font-size:20px;
+text-decoration:none;
+transition:.3s;
+}
+
+.social a:hover{
+color:#00ff9d;
+}
+
+/* الأزرار */
+
+.links{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.btn{
+padding:15px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+background:#1e3c4f;
+font-weight:bold;
+transition:0.3s;
+position:relative;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00ff9d,0 0 30px #00ff9d;
+background:#00ff9d;
+color:black;
+}
+
+footer{
+margin-top:20px;
+font-size:12px;
+opacity:.6;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="chart"></canvas>
+
+<div class="container">
+
+<img class="logo" src="PUT_LOGO_HERE">
+
+<h1>Falcon SAQR</h1>
+<p>Consulting</p>
+
+<div class="social">
+
+<a href="WHATSAPP_LINK">WhatsApp</a>
+<a href="TWITTER_LINK">X</a>
+<a href="TIKTOK_LINK">TikTok</a>
+
+</div>
+
+<div class="links">
+
+<a class="btn" href="AMERICAN_MARKET_LINK">
+الصقر للسوق الأمريكي
+</a>
+
+<a class="btn" href="SAUDI_MARKET_LINK">
+الصقر للسوق السعودي
+</a>
+
+<a class="btn" href="PUT_NEW_LINK">
+لينك جديد
+</a>
+
+</div>
+
+<footer>
+Falcon SAQR © 2026
+</footer>
+
+</div>
+
+<script>
+
+/* شارت متحرك */
+
+const canvas = document.getElementById("chart");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let points=[];
+
+for(let i=0;i<50;i++){
+points.push(Math.random()*canvas.height)
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.beginPath();
+
+ctx.strokeStyle="#00ff9d";
+ctx.lineWidth=2;
+
+let step=canvas.width/points.length;
+
+for(let i=0;i<points.length;i++){
+
+points[i]+=Math.random()*10-5;
+
+if(points[i]<0)points[i]=0;
+if(points[i]>canvas.height)points[i]=canvas.height;
+
+ctx.lineTo(i*step,points[i])
+
+}
+
+ctx.stroke()
+
+requestAnimationFrame(animate)
+
+}
+
+animate()
+
+</script>
+
+</body>
+</html>
