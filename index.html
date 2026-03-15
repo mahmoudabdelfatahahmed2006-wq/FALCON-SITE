@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Falcon SAQR</title>
 
+<!-- أيقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 
 *{
@@ -69,18 +72,20 @@ margin-bottom:20px;
 /* السوشيال */
 .social{
 margin-bottom:25px;
+display:flex;
+justify-content:center;
+gap:20px;
 }
 
 .social a{
-margin:0 10px;
 color:white;
-font-size:20px;
-text-decoration:none;
+font-size:26px;
 transition:.3s;
 }
 
 .social a:hover{
 color:#00ff9d;
+transform:scale(1.2);
 }
 
 /* الأزرار */
@@ -98,7 +103,6 @@ color:white;
 background:#1e3c4f;
 font-weight:bold;
 transition:0.3s;
-position:relative;
 }
 
 .btn:hover{
@@ -130,20 +134,31 @@ opacity:.6;
 
 <div class="social">
 
-<a href="WHATSAPP_LINK">https://wa.me/message/3T5DWZVA2R3KM1</a>
-<a href="TWITTER_LINK">https://x.com/Falcon_SAQR1</a>
-<a href="INSTAGRAM_LINK">https://www.instagram.com/falcono_fficial?igsh=YndvemF6N3c3ajZ2</a>
-<a href="https://www.tiktok.com/@falcon_saqr1?_r=1&_t=ZS-94fQxw4YrVF">TikTok</a>
+<a href="https://wa.me/message/3T5DWZVA2R3KM1" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<a href="https://x.com/Falcon_SAQR1" target="_blank">
+<i class="fa-brands fa-x-twitter"></i>
+</a>
+
+<a href="https://www.instagram.com/falcono_fficial?igsh=YndvemF6N3c3ajZ2" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="https://www.tiktok.com/@falcon_saqr1?_r=1&_t=ZS-94fQxw4YrVF" target="_blank">
+<i class="fa-brands fa-tiktok"></i>
+</a>
 
 </div>
 
 <div class="links">
 
-<a class="btn" href="https://t.me/FalconUSA">
+<a class="btn" href="https://t.me/FalconUSA" target="_blank">
 الصقر للسوق الأمريكي
 </a>
 
-<a class="btn" href="https://t.me/FalconSaudi">
+<a class="btn" href="https://t.me/FalconSaudi" target="_blank">
 الصقر للسوق السعودي
 </a>
 
@@ -157,7 +172,7 @@ Falcon SAQR © 2026
 
 <script>
 
-/* شارت متحرك */
+/* الشارت المتحرك */
 
 const canvas = document.getElementById("chart");
 const ctx = canvas.getContext("2d");
@@ -167,7 +182,7 @@ canvas.height = window.innerHeight;
 
 let points=[];
 
-for(let i=0;i<50;i++){
+for(let i=0;i<60;i++){
 points.push(Math.random()*canvas.height)
 }
 
